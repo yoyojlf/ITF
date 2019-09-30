@@ -13,9 +13,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required #para decorar los resultados de las url
+from web.views import  IndexView, RankingView #LoginView, LogoutView,
+from usuario.views import CreateUserView, LoginView, LogoutView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #Url de login y logout
+    url(r'^login$', LoginView.as_view(), name='user_login'),
+    url(r'^logout$', LogoutView.as_view(), name='user_logout'),
+    #url del index
+    url(r'^$', IndexView.as_view(), name='web_index'),
+    #Url ranking
+    url(r'^ranking$', RankingView.as_view(), name='web_ranking'),
+    #Urls de la app usuarios
+    #Url para listar usuarios proximamente
+    #Url para registrar usuario
+    url(r'^user/signup$', CreateUserView.as_view(), name='user_create' ),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

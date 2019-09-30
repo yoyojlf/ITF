@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+
+<head>
+        {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="manifest" href="{% static "manifest.json" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/flexboxgrid.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.css">
+    <link rel="stylesheet" href="{% static "css/style1.css" %}">
+    <link rel="stylesheet" href="{% static "css/album.css" %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign up</h1>
+        <form action="" method="GET" id="formulario">
+            <div class="container">
+                <div class="form-group">
+                    <label for="nombre">Name</label>
+                    <input type="text" name="nombre" id="" placeholder="Ingrese su nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Last Name</label>
+                    <input type="text" name="apellidos" id="" placeholder="Ingrese sus apellidos" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Email</label>
+                    <input type="email" name="correo" id="" placeholder="Ingrese su correo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Password</label>
+                    <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su cotraseña" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="fnacimiento">Birthday</label>
+                    <input type="date" name="fnacimiento" id="" placeholder="Ingresa tu fecha de nacimiento" class="form-control">
+                </div>
+                 <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea name="bio" id="" rows="3" class="form-control"></textarea>
+                </div>
+                <button type="reset" class="btn btn-warning">Clean</button>
+                <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <!--JS FILES-->
+    <script src="{% static "js/jquery-3.4.1.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="{% static "js/jquery.validate.js" %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+.navbar{
+    box-shadow: 2px 2px 5px #000000;
+    opacity: .9;
+}
+
+.navbar .nav-item .nav-link{
+    color: #ffffff;
+}
+
+.mainHeader{
+    position: relative;
+    background: url(../img/itimg/background.jpg);
+    background-size: cover;
+    min-height: 600px;
+}
+
+.background-overlay{
+    position: absolute;
+    background: rgba(48, 51, 107, .8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.form-control, .btn{
+    border-radius: 0;
+}
+
+.team{
+    background: #30336b;
+}
+
+footer{
+    background: rgb(195, 190, 214);
+}
+
+.Back{
+
+    width: 100%;
+    height: 100vh;
+
+    color: #ffffff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    position: relative;
+    background-size: 400% 400%;
+    animation: change 10s ease-in-out infinite;
+}
+
+
+@keyframes change{
+
+    0%{ background-position: 0 50%;}
+    50%{ background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+
+}
+
+.title{
+
+    text-align: center;
+    margin: 40px;
+    padding: 10px;
+    font-size: 3vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Nuevo usuario{% endblock %}
+{% block carrusel %}{% endblock %}
+{% block bajocarrusel %}{% endblock %}
+{%block body %}
+    <br>>
+    <div align="center">
+        <h1>Nuevo Usuario</h1>
+    </div>
+    <hr>
+    {% if success_message %}
+        {{success_message}}
+    {% endif%}
+
+    <div class="container">
+
+        <form class="form-inline" role="form" method="post">
+            {% csrf_token %}
+            <table class="table-responsive">
+                {{ form.as_table }}
+            </table>
+            <div>
+                <button class="btn btn-color">Sign Up</button>
+            </div>
+        </form>
+
+    </div>
+    <br><br>
+
+{% endblock %}

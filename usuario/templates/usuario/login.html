@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+{% block carrusel %}{% endblock %}
+{% block bajocarrusel %}{% endblock %}
+{%block body %}
+
+{% for error in errors %}
+<p>{{ error }}</p>
+{% endfor %}
+<br><br>
+
+    <div class="container">
+
+        <form class="form-inline" role="form" method="post" align="center">
+            {% csrf_token %}
+
+
+            <table class="table-responsive" >
+                {{ login_form.as_table }}
+
+            </table>
+            <br>
+            <div>
+                <button class="btn btn-color">Entrar</button>
+            </div>
+
+        </form>
+    </div>
+
+    <br><br>
+
+{% endblock %}
