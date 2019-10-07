@@ -39,12 +39,16 @@ footer{
 
     width: 100%;
     height: 100vh;
-
     color: #ffffff;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    position: relative;
-    background-size: 400% 400%;
-    animation: change 10s ease-in-out infinite;
+
+  /* Opcion 1 background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);*/
+   /* Opcion 2 background: linear-gradient(-45deg, #FFBBBC, #E89EC4,#FEADFF);*/
+   /* Opcion 3 */
+   background: linear-gradient(-45deg, #6DA6EB, #C2DDFF,#75B3FF,#5E8FCC);
+
+   position: relative;
+   background-size: 400% 400%;
+   animation: change 10s ease-in-out infinite;
 }
 
 
@@ -61,8 +65,8 @@ footer{
     text-align: center;
     margin: 40px;
     padding: 10px;
-    font-size: 3vh;
+    font-size: 6vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+    font-weight: bolder
 
 }
