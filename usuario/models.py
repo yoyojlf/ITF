@@ -4,9 +4,10 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class TipoUsuario(models.Model):
     name = models.CharField(max_length=50,blank=False)
+    description = models.CharField(max_length=100,blank=True)
     is_active = models.BooleanField(default=True)
     def __str__(self):
-        return self.name;
+        return self.name
 
 class Usuario(AbstractUser):
     rut = models.CharField(max_length=11,blank=True)
@@ -20,4 +21,5 @@ class Usuario(AbstractUser):
 
     def __str__(self):
         return self.username
+
 
