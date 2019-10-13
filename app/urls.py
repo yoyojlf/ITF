@@ -19,7 +19,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required #para decorar los resultados de las url
-from web.views import  IndexView, RankingView #LoginView, LogoutView,
+from web.views import  IndexView, RankingView,LogView #LoginView, LogoutView,
 from usuario.views import CreateUserView, LoginView, LogoutView
 
 
@@ -32,6 +32,8 @@ urlpatterns = [
     url(r'^$', IndexView.as_view(), name='web_index'),
     #Url ranking
     url(r'^ranking$', RankingView.as_view(), name='web_ranking'),
+ 
+    url(r'^logintest$',LogView.as_view(),name='web_logintest'),
     #Urls de la app usuarios
     #Url para listar usuarios proximamente
     #Url para registrar usuario

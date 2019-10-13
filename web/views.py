@@ -34,3 +34,9 @@ class RankingView(View):
         context = {}
         return render(request, template_name, context)
 
+# index del login
+class LogView(View):
+    def get(self, request):
+        template_name = 'logintest.html'
+        context = {}
+        return render(request, template_name, context)
