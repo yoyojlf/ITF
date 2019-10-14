@@ -52,6 +52,47 @@ class LoginView(View):
         }
         return render(request,'usuario/login.html', context)
 
+#Prueba de login cargado con formulario en html
+class LoginView2(View):
+    def get(self,request):
+        error_messages = []
+        form = LoginForm()
+        context = {
+            'errors': error_messages,
+            'login_form': form
+        }
+        return render(request,'usuario/logintest.html', context)
+
+    def post(self, request):
+        error_messages = []
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('usr')
+            password = form.cleaned_data.get('pwd', '')
+            user = authenticate(username=username, password=password)
+            if user is None:
+                error_messages.append('Nombre de usuario o contraseña incorrectos')
+            else:
+                if user.is_active:
+                    django_login(request, user)
+                    """
+                                        if user.is_superuser:
+                        url = request.GET.get('next', 'admin')
+                        return redirect(url)
+                    elif user.is_staff:
+                        return redirect('admin')
+                    else:
+                        return redirect('index')
+                    """
+                    return redirect('web_index')
+                else:
+                    error_messages.append('El usuario no está activo')
+        context = {
+            'errors': error_messages,
+            'login_form': form
+        }
+        return render(request,'usuario/login.html', context)
+
 class LogoutView(View):
     @method_decorator(login_required())
     def get(self,request):
