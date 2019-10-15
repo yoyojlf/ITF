@@ -1,6 +1,28 @@
 from django import forms
 from usuario.models import Usuario
 
+class UsuarioFormAdm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        exclude = [ 'last_login', 'date_joined', 'created_at', 'modified_at', ]
+        labels = {'username': 'username', 'password': 'password', 'first_name': 'First Name',
+                  'last_name': 'Last Name', }
+        help_texts = {'password': ' ', 'username': ' ', 'is_active': ''}
+
+        widgets = {
+            'password': forms.PasswordInput(),
+            'presentacion': forms.Textarea,
+        }
+
+    def save(self, commit=True):  # Save the provided password in hashed format #
+        user = super(UsuarioFormAdm, self).save(commit=False)
+        user.set_password(self.cleaned_data["password"])
+
+        if commit:
+            user.save()
+        return user
+
+
 
 class UsuarioForm(forms.ModelForm):
     class Meta:
