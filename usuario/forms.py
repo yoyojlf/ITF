@@ -22,7 +22,7 @@ class UsuarioFormAdm(forms.ModelForm):
             user.save()
         return user
 
-
+    #hola gato#
 
 class UsuarioForm(forms.ModelForm):
     class Meta:
