@@ -1,69 +1,91 @@
-$(document).ready(function () {
-    $("#formulario").validate({
-        errorClass: "is-invalid",
-        rules: {
-            nombre: {
-                required: true,
-            },
-            apellidos:{
-                required: true,
-            },
-            correo: {
-                email: true,
-                required: true,
-            },
-            contrasena:{
+var total = document.getElementById("totalSlider");
 
-                required: true,
-                password: true,
-            },
-        },
-        messages: {
-            nombre: {
-                required: "the name field is required",
-            },
-            apellidos:{
-                required: "the last name field is required",
-            },
-            correo:{
-                required: "the email field is required",
-            },
-            contrasena:{
-                required: "the password field is required",
-            },
-        }
-    })
-})
+var slider = document.getElementById("rangeSlider");
+var output = document.getElementById("valor");
 
-$("#formulario").submit(function(){
-    var hoy             = new Date();
-var fechaFormulario = new Date('2016-06-07');
+output.innerHTML = slider.value;
 
-// Comparamos solo las fechas => no las horas!!
-hoy.setHours(0,0,0,0);  // Lo iniciamos a 00:00 horas
-var diferencia = hoy-18;
-var diferencia2 =fechaFormulario-0 
-if (fechaFormulario >= diferencia) {
+slider.oninput = function () {
+    output.innerHTML = this.value;
 
-  console.log("Mayor de 18");
-  console.log(diferencia);
-  console.log(diferencia2);
-  
+    total.innerHTML = parseInt(slider.value, 10) +
+        parseInt(slider2.value, 10) +
+        parseInt(slider3.value, 10) +
+        parseInt(slider4.value, 10) +
+        parseInt(slider5.value, 10);
 }
-else {
-  console.log("Menor de 18");
-  console.log(diferencia);
-  console.log(diferencia2);
+
+// -------------------------------------------------------
+var slider2 = document.getElementById("rangeSlider2");
+var output2 = document.getElementById("valor2");
+
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function () {
+    output2.innerHTML = this.value;
+
+    total.innerHTML = parseInt(slider.value, 10) +
+        parseInt(slider2.value, 10) +
+        parseInt(slider3.value, 10) +
+        parseInt(slider4.value, 10) +
+        parseInt(slider5.value, 10);
 }
-    if($("#formulario").valid()){
-        console.log("Valido")
-    }
-    else{
-        Swal.fire({
-            type:'error',
-            title:'Oops',
-            text:'Some fields are not complete or are wrong',
-        })
-    }
-    
-})
+
+// -------------------------------------------------------
+
+
+var slider3 = document.getElementById("rangeSlider3");
+var output3 = document.getElementById("valor3");
+
+output3.innerHTML = slider3.value;
+
+slider3.oninput = function () {
+    output3.innerHTML = this.value;
+
+    total.innerHTML = parseInt(slider.value, 10) +
+        parseInt(slider2.value, 10) +
+        parseInt(slider3.value, 10) +
+        parseInt(slider4.value, 10) +
+        parseInt(slider5.value, 10);
+}
+
+// -------------------------------------------------------
+
+var slider4 = document.getElementById("rangeSlider4");
+var output4 = document.getElementById("valor4");
+
+output4.innerHTML = slider4.value;
+
+slider4.oninput = function () {
+    output4.innerHTML = this.value;
+
+    total.innerHTML = parseInt(slider.value, 10) +
+        parseInt(slider2.value, 10) +
+        parseInt(slider3.value, 10) +
+        parseInt(slider4.value, 10) +
+        parseInt(slider5.value, 10);
+}
+
+// -------------------------------------------------------
+
+var slider5 = document.getElementById("rangeSlider5");
+var output5 = document.getElementById("valor5");
+
+output5.innerHTML = slider5.value;
+
+slider5.oninput = function () {
+    output5.innerHTML = this.value;
+
+    total.innerHTML = parseInt(slider.value, 10) +
+        parseInt(slider2.value, 10) +
+        parseInt(slider3.value, 10) +
+        parseInt(slider4.value, 10) +
+        parseInt(slider5.value, 10);
+}
+
+// -------------------------------------------------------
+
+total.innerHTML = parseInt(slider.value, 10) +
+    parseInt(slider2.value, 10) +
+    parseInt(slider3.value, 10) +
+    parseInt(slider4.value, 10);

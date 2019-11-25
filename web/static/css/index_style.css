@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#main-header {
+    position: relative;
+    background: url(../img/coworking.jpg);
+    background-size: cover;
+}
+
+#main-header::before {
+    height: 54px;
+    content: "";
+    display: block;
+}
+
+
+.background-overlay {
+    background: rgba(116, 136, 252, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#section0::before {
+    height: 54px;
+    content: "";
+    display: block;
+}
+
+#testimonio {
+    background: #f1f1f1;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#nosotros::before{
+    height: 30px;
+    content: "";
+    display: block;
+}
+
+.team, footer {
+    background: #30336b;
+  }

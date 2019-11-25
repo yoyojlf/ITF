@@ -24,13 +24,16 @@ class LogoutView(View):
 class IndexView(View):
     def get(self,request):
         template_name = 'principal.html'
+        template_name = 'index.html'
         context = {}
         return render(request, template_name, context)
 
 # index del proyecto
+
 class RankingView(View):
+    @method_decorator(login_required())
     def get(self, request):
-        template_name = 'ranking.html'
+        template_name = 'Ranking.html'
         context = {}
         return render(request, template_name, context)
 
@@ -38,5 +41,12 @@ class RankingView(View):
 class LogView(View):
     def get(self, request):
         template_name = 'logintest.html'
+        context = {}
+        return render(request, template_name, context)
+
+# profile
+class ProfileView(View):
+    def get(self, request):
+        template_name = 'Perfil.html'
         context = {}
         return render(request, template_name, context)

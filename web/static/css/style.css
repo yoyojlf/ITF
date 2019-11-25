@@ -1,60 +1,238 @@
-body{
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
-#logo{
-    padding: 10px;
-    margin-left: 10px;
-}
-li a{
-    color: #ffffff;
-    text-decoration: none;
-}
-li{
-    float: left;
-    margin: 10px;
-}
-.centrar{
-    text-align: center;
-}
-.blanco{
-    color:#ffffff;
-}
-ul{
-    list-style: none;
-}
-.main{
-    background-color:#6DCCAA;
+body {
+    background-color: #f4f4f4;
 }
 
-.header{
-    background-color:#85D4B7;
+/* NAVBAR */
+
+.sidebar {
+    height: 100vh;
+    /* background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,0)),blue; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 7px 25px #999999;
 }
-.img-fluid{
-    max-width: 100%;
-    height: auto;
+
+.bottom-border {
+    border-bottom: 1px groove #eeeeee;
 }
-.img-fluid2{
-    max-height: 100%;
-    width: auto;
+
+.sidebar-link {
+    transition: all .4s;
 }
-.img-fluid3{
-    max-width: 100%;
-    height: 300px;
+
+.sidebar-link:hover {
+    background-color: #777777;
+    border-radius: 5px;
 }
-footer{
-    background-color: lightgrey;
-    padding: 50px;
+
+.current {
+    background-color: #3936f4;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px #111111;
+    transition: all .3s;
 }
-.paddin-1{
-    padding-top: 15px;
-    padding: 15px;
+
+.current:hover {
+    background-color: #3946f4;
+    border-radius: 7px;
+    box-shadow: 2px 5px 20px #111111;
+    transform: translate(-1px);
 }
-.gray-alpha{
-    color: rgba(15, 15, 15, 0.4);
+
+.search-input {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #999999;
 }
-#redes li{
-    float: left;
-    margin: 10px;
-    background-color: black;
+
+
+.search-input:focus {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 2px solid #3946f4;
 }
+
+.search-button {
+    border-radius: 50%;
+    padding: 10px 15px;
+    transition: all .4s;
+}
+
+.search-button:hover {
+    background-color: #eeeeee;
+    transform: translate(-1px);
+
+}
+
+.icon-parent {
+    position: relative;
+}
+
+.icon-bullet::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    height: 12px;
+    width: 12px;
+    background-color: #f44336;
+    border-radius: 50%;
+}
+
+
+/* FIN NAVBAR */
+
+
+/* SECTION */
+.seccion {
+    margin-left: 320px;
+    margin-top: 100px;
+}
+
+/* CARDS */
+
+.card-common {
+    box-shadow: 1px 2px 5px #999999;
+    transition: all .4s
+}
+
+.card-common:hover {
+    box-shadow: 2px 3px 15px #999999;
+    transform: translateY(-1px)
+}
+
+.card-header .fa {
+    transition: .3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+    transform: rotate(90deg);
+}
+
+
+
+/* FIN CARDS */
+
+
+
+/* FIN SECTION */
+
+/* ------------------------------------------------------------EVALUACIONES------------------------------------------------------- */
+
+p {
+    margin-top: 25px;
+    opacity: 0.7;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0));
+
+
+    outline: none;
+    opacity: 0.7;
+
+    border-radius: 12px;
+    box-shadow: 0px 1px 10px 1px black;
+    cursor: pointer;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+/* para el gugel crom */
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* para el fairefox */
+
+.slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: wihte;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+/* MEDIA QUERY'S */
+
+
+@media (max-width: 1280px) { 
+
+    #seccion-perfil {
+        margin-left: 220px;
+    }
+
+    #seccion-evaluaciones {
+        margin-left: 220px;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    #seccion-perfil {
+        margin-left: 260px;
+    }
+
+    #seccion-evaluaciones {
+        margin-left: 260px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+
+    .top-navbar {
+        position: static;
+    }
+
+    #seccion-perfil {
+        margin-left: 250px;
+    }
+
+    #seccion-evaluaciones {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #seccion-perfil {
+        margin-left: 0;
+    }
+
+    #seccion-evaluaciones {
+        margin-left: 0;
+    }
+
+    #seccion-evaluaciones img {
+        display: block;
+    }
+}
+
+
+
+

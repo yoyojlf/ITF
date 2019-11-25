@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles%}
+<head>
+{% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+
+    <title>Pagina Inicio</title>
+</head>
+
+<body>
+{% load static %}
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bootstrap Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#main-header">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section0">Servicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_logout'%}">Logout {{ user.username }}</a>
+                    </li>
+                    {% else %}
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_login'%}">Login</a>
+                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_create'%}">Sign up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+
+    <header id="main-header">
+        <div class="background-overlay py-5">
+          <div class="container">
+            <div class="row d-flex h-100">
+              <div class="col-sm-6 text-center justify-content-center align-self-center">
+                <h1>
+                  <strong>Evaluaciones de desempeño gamificadas</strong> 
+                </h1>
+                <a href="{% url 'web_ranking' %}" class="btn btn-outline-secondary btn-lg text-white">
+                  Probar
+                </a>
+              </div>
+              <div class="col-sm-6 header-img">
+                <img src="{% static 'img/boring.png' %}" class="img-fluid d-none d-sm-block rounded">
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <section id="section0">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="header-content-left">
+                        <img src="{% static 'img/aburridisimo.png' %}" alt="celular" style="width: 100%;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="header-content-right">
+                        <h1 class="display-4">¿Aburrido del papeleo?</h1>
+                        <P class="mt-5">Esta nueva plataforma es 100% digtal y no requiere que tu empresa gaste papel innecesariamente. Hay que cuidar los arboles ¿no?</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION TESTIMONIO -->
+
+    <section id="testimonio">
+        <div class="container">
+            <p class="h2 mb-2">Con esta herramienta he podido evaluar sinceramente a todos mis compañeros de trabajo. Ademas, crea un ambiente competitivo y sano dentro de las oficinas donde todos nos esforzamos por tener un mejor rendimiento</p>
+            <p class="h4">-El shinobi chileno</p>
+        </div>
+    </section>
+
+    <!-- INFORMACION 1 -->
+
+    <section id="info1">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-md-6">
+                    <div class="info-left">
+                        <img src="{% static 'img/esdos_estres.jpg' %}" alt="imagen" style="width: 100%; height: 100%;">
+                    </div>
+                </div>
+                <div class="col-md-6 my-auto">
+                    <div class="info-right">
+                        <h2>No te estreses</h2>
+                        <p>Puedes realizar evaluaciones de desempeño en cuestion de minutos, y si te aburres los dejas para despues de almuerzo. Tambien lo puedes hacer desde tu telefono </p>
+                            <p class="mt-3">¿viste el boton de probar que esta mas arriba? ¡Aqui hay otro!</p>
+                        <a href="{% url 'web_ranking' %}" class="btn btn-outline-secondary btn-lg">Probar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- TEAM -->
+<section class="text-center team" id="nosotros">
+    <div class="container p-5">
+      <h1 class="text-center text-white">Equipo</h1>
+      <p class="text-white">
+       Esta es nuestra fina seleccion de personal
+      </p>
+      <div class="row my-5">
+        <!-- USER TEAM -->
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="{% static 'img/person.png' %}" class="img-fluid rounded-circle w-50">
+              <h3>Felipe Henriquez</h3>
+              <p>
+                El jefesito
+              </p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="{% static 'img/person.png' %}" class="img-fluid rounded-circle w-50">
+              <h3>Cristopher Angulo</h3>
+              <p>
+                El otro jefesito
+              </p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="{% static 'img/person.png' %}" class="img-fluid rounded-circle w-50">
+              <h3>Jordhan Lizama</h3>
+              <p>
+                El ultimo jefesito
+              </p>
+              <div class="d-flex flex-row justify-content-center">
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="p-4">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  
+
+<!-- CONTACT -->
+<section class="bg-light py-5" id="contacto">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>¡Contactanos!</h3>
+          <p>
+            Envianos un mail si tienes alguna consulta, respondemos rapido
+          </p>
+          <form action="">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <i class="fas fa-user input-group-text"></i>
+              </div>
+              <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <i class="fas fa-envelope input-group-text"></i>
+              </div>
+              <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <i class="fas fa-pencil-alt input-group-text"></i>
+              </div>
+              <textarea name="" cols="30" rows="10" placeholder="Message" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send</button>
+          </form>
+        </div>
+        <div class="col-lg-3 align-self-center">
+          <img src="{% static 'img/wn_pajero.jpg' %}" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container p-3">
+      <div class="row text-center text-white">
+        <div class="col ml-auto">
+          <p>Copyright &copy; 2018</p>
+        </div>
+      </div>
+    </div>       
+  </footer>
+
+
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- scroll reveal js -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Custom Javascript -->
+    <script src="{% static 'js/index_app.js' %}"></script>
+</body>
+
+</html>

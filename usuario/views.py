@@ -43,7 +43,8 @@ class LoginView(View):
                     else:
                         return redirect('index')
                     """
-                    return redirect('web_index')
+                    url = request.GET.get('next', 'web_index')
+                    return redirect(url)
                 else:
                     error_messages.append('El usuario no está activo')
         context = {
@@ -84,7 +85,8 @@ class LoginView2(View):
                     else:
                         return redirect('index')
                     """
-                    return redirect('web_index')
+                    url = request.GET.get('next', 'web_index')
+                    return redirect(url)
                 else:
                     error_messages.append('El usuario no está activo')
         context = {

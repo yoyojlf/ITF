@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+    {% load staticfiles%}
+<head>
+        {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+
+    <!-- style personalizado -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+        {% load static %}
+    <!-- NavBar -->
+
+    <nav class="navbar navbar-expand-md navbar-light">
+        <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse"
+            data-target="#Navbarxd">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbarxd">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- INICIO SIDEBAR -->
+                    <div class="col-md-4 col-lg-3 col-xl-2 sidebar fixed-top bg-dark">
+                        <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-4 mb-4 bottom-border">
+                            Panel Principal</a>
+                        <div class="bottom-border pb-3">
+                            <img src="{% static 'img/admin.jpeg' %}" class="img-fluid rounded-circle mx-auto d-block" style="width:50%"
+                                alt="usuario">
+                            <a href="#" class="text-white text-center d-block mt-3">{{ user.username }}</a>
+                        </div>
+                        <ul class="navbar-nav flex-column py-3">
+                            <li class="nav-item">
+                                <a href="{% static 'Ranking.html' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                    <i class="fas fa-list-ol text-light fa-lg mr-3"> Ranking</i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{% static 'Perfil.html' %}" class="nav-link text-white p-3 mb-2 current">
+                                    <i class="fas fa-user text-light fa-lg mr-3"> Perfil</i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{% static 'Evaluaciones.html' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                    <i class="fas fa-check text-light fa-lg mr-3"> Evaluaciones</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- FIN SIDEBAR -->
+
+                    <!-- INICIO NAVBAR -->
+                    <div class="col-md-8 col-lg-9 col-xl-10 ml-auto bg-dark fixed-top py-3 top-navbar">
+                            <div class="row align-items-center">
+                                <div class="col-md-11">
+                                    <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+                                </div>
+                                <div class="col-md-1">
+                                    <ul>
+                                        <li class="nav-item ml-auto">
+                                            <a href="" class="nav-link" data-toggle="modal" data-target="#sign-out">
+                                                <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FIN NAVBAR -->
+
+
+    <!-- MODAL (CERRAR SESION) -->
+    <div class="modal" id="sign-out">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-tittle">¿Esta Seguro que desea salir?</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    press logout to leave
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
+                    <a class="btn btn-danger" href="{% static 'index.html' %}" role="button">Log Out</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- FIN MODAL -->
+
+
+    <!-- PERFIL -->
+    <section class="seccion" id="seccion-perfil">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Profile</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <!-- CARD DE LA FOTO DE PERFIL -->
+
+                            <div class="card mb-3">
+                                <div class="card-body text-center shadow"><img class="w-auto mb-3 mt-4"
+                                        src="{% static 'img/cust1.jpeg' %}" width="160" height="160">
+                                    <div class="mb-3">
+                                        <button class="btn btn-primary btn-sm" type="button">Change Photo</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- CARD DE LA SECCION HABILIDADES -->
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="text-primary font-weight-bold m-0">Habilidades</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="border border-dark p-3 mb-1 text-primary">
+                                        <h4 class="small font-weight-bold">Trabajo en equipo<span
+                                                class="float-right">1497</span></h4>
+                                    </div>
+                                    <div class="border border-dark p-3 mb-1 text-info">
+                                        <h4 class="small font-weight-bold">Organizacion<span
+                                                class="float-right">876</span></h4>
+                                    </div>
+                                    <div class="border border-dark p-3 mb-1 text-danger">
+
+                                        <h4 class="small font-weight-bold">Creatividad<span
+                                                class="float-right">2433</span></h4>
+                                    </div>
+                                    <div class="border border-dark p-3 mb-1 text-info">
+
+                                        <h4 class="small font-weight-bold">Comunicacion<span
+                                                class="float-right">655</span></h4>
+                                    </div>
+                                    <div class="border border-dark p-3 mb-1 text-warning">
+                                        <h4 class="small font-weight-bold">Toma de desiciones<span
+                                                class="float-right">1635</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">User Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Username</strong></label>
+                                                            <h5>Felipe Henriquez</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Email Address</strong></label>
+                                                            <h5>fe.henriquezl@alumnos.duoc.cl</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>First Name</strong></label>
+                                                            <h5>Felipe</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Last Name</strong></label>
+                                                            <h5>Henriquez</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><button class="btn btn-primary btn-sm"
+                                                        type="submit">Editar</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Contact Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label><strong>Address</strong></label>
+                                                    <h5>Calle falsa #123</h5>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>City</strong></label>
+                                                            <h5>Springfield</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Country</strong></label>
+                                                            <h5>USA</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><button class="btn btn-primary btn-sm"
+                                                        type="submit">Editar</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-5">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">Informacion Adicional</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form>
+                                        <div class="form-group"><label
+                                                for="signature"><strong>Biografia</strong><br></label><textarea
+                                                class="form-control" rows="4" name="signature"></textarea></div>
+                                        <div class="form-group"><button class="btn btn-primary btn-sm"
+                                                type="submit">Guardar</button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- fin perfil -->
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/8ff4362b35.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

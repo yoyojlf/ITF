@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <!-- style personalizado -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR + SIDEBAR -->
+
+    <nav class="navbar navbar-expand-md navbar-light">
+        <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse"
+            data-target="#Navbarxd">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbarxd">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- INICIO SIDEBAR -->
+                    <div class="col-md-4 col-lg-3 col-xl-2 sidebar fixed-top bg-dark">
+                        <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-4 mb-4 bottom-border">
+                            Panel Principal</a>
+                        <div class="bottom-border pb-3">
+                            <img src="img/admin.jpeg" class="img-fluid rounded-circle mx-auto d-block" style="width:50%"
+                                alt="usuario">
+                            <a href="#" class="text-white text-center d-block mt-3">{{ user.username }}</a>
+                        </div>
+                        <ul class="navbar-nav flex-column py-3">
+                            <li class="nav-item">
+                                <a href="Ranking.html" class="nav-link text-white p-3 mb-2 current">
+                                    <i class="fas fa-list-ol text-light fa-lg mr-3"> Ranking</i>
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="Perfil.html" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                    <i class="fas fa-user text-light fa-lg mr-3"> Perfil</i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="Evaluaciones.html" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                    <i class="fas fa-check text-light fa-lg mr-3"> Evaluaciones</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- FIN SIDEBAR -->
+
+                    <!-- INICIO NAVBAR -->
+                    <div class="col-md-8 col-lg-9 col-xl-10 ml-auto bg-dark fixed-top py-3 top-navbar">
+                            <div class="row align-items-center">
+                                <div class="col-md-11">
+                                    <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+                                </div>
+                                <div class="col-md-1">
+                                    <ul>
+                                        <li class="nva-item ml-auto">
+                                            <a href="" class="nav-link" data-toggle="modal" data-target="#sign-out">
+                                                <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- FIN NAVBAR -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FIN NAVBAR + SIDEBAR -->
+
+
+    <!-- MODAL -->
+    <div class="modal" id="sign-out">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-tittle">¿Esta Seguro que desea salir?</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    press logout to leave
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
+                    <a class="btn btn-danger" href="index.html" role="button">Log Out</a>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- FIN MODAL -->
+
+
+
+    <!-- BOOTSTRAP CARDS -->
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-lg-9 col-xl-10 ml-auto">
+                    <div class="row pt-md-5 mt-md-3 mb-5">
+                        <div class="col-sm-6 col-xl-3 p-2">
+                            <!-- HOPPING CARD -->
+                            <div class="card card-common">
+                                <div class="card-body d-flex justify-content-between">
+                                    <i class="fas fa-shopping-cart fa-3x text-warning"></i>
+                                    <div class="text-right text-secondary">
+                                        <h5>Sales</h5>
+                                        <h3>$130.000</h3>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fas fa-sync mr-2"></i>
+                                    <span>
+                                        Updated Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BILL CARD -->
+                        <div class="col-sm-6 col-xl-3 p-2">
+                            <div class="card card-common">
+                                <div class="card-body d-flex justify-content-between">
+                                    <i class="fas fa-money-bill-alt fa-3x text-success"></i>
+                                    <div class="text-right text-secondary">
+                                        <h5>Expenses</h5>
+                                        <h3>$100.000</h3>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fas fa-sync mr-2"></i>
+                                    <span>
+                                        Updated Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- USERS CARD -->
+                        <div class="col-sm-6 col-xl-3 p-2">
+                            <div class="card card-common">
+                                <div class="card-body d-flex justify-content-between">
+                                    <i class="fas fa-users fa-3x text-info"></i>
+                                    <div class="text-right text-secondary">
+                                        <h5>Users</h5>
+                                        <h3>30.000</h3>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fas fa-sync mr-2"></i>
+                                    <span>
+                                        Updated Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CHART CARD -->
+                        <div class="col-sm-6 col-xl-3 p-2">
+                            <div class="card card-common">
+                                <div class="card-body d-flex justify-content-between">
+                                    <i class="fas fa-chart-line fa-3x text-danger"></i>
+                                    <div class="text-right text-secondary">
+                                        <h5>Visitors</h5>
+                                        <h3>50.000</h3>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fas fa-sync mr-2"></i>
+                                    <span>
+                                        Updated Now
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN BOOTSTRAP CARDS -->
+
+    <!-- BOOTSTRAP TABLES -->
+    <section>
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-md-8 col-lg-9 col-xl-10 ml-auto">
+                    <div class="row">
+                        <div class="col-12 col-xl-6 mb-4">
+                            <h3 class="text-mute text-center mb-3">Staff Salary</h3>
+                            <table class="table bg-light text-center">
+                                <thead>
+                                    <tr class="text-muted">
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Salary</th>
+                                        <th>Date</th>
+                                        <th>Contact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <th>John</th>
+                                        <th>$25000</th>
+                                        <th>25/05/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <th>Will</th>
+                                        <th>$28000</th>
+                                        <th>26/04/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <th>Samantha</th>
+                                        <th>$23000</th>
+                                        <th>08/02/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <th>Barry</th>
+                                        <th>$45000</th>
+                                        <th>06/12/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <th>Clark</th>
+                                        <th>$35000</th>
+                                        <th>15/08/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>6</th>
+                                        <th>Jasmin</th>
+                                        <th>$62000</th>
+                                        <th>30/06/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>7</th>
+                                        <th>Humbert</th>
+                                        <th>$78000</th>
+                                        <th>20/01/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>8</th>
+                                        <th>John</th>
+                                        <th>$46000</th>
+                                        <th>31/01/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>9</th>
+                                        <th>Dewey</th>
+                                        <th>$13000</th>
+                                        <th>19/09/2018</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                    <tr>
+                                        <th>10</th>
+                                        <th>Paloma Mami</th>
+                                        <th>$9500000</th>
+                                        <th>01/01/1990</th>
+                                        <th><button type="button" class="btn btn-info btn-sm">Message</button></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- PAGINATION -->
+                            <nav>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            <span>&laquo;</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item active">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            1
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            2
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            3
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            <span>&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- FIN PAGINATION -->
+
+
+                        </div>
+                        <div class="col-12 col-xl-6">
+                            <h3 class="text-muted text-center mb-3">Recent Payment</h3>
+                            <table class="table table-dark table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>John</td>
+                                        <td>$25000</td>
+                                        <td>25/05/2018</td>
+                                        <td><span class="badge badge-success">Aproved</span></th>
+                                    </tr>
+
+                                    <tr>
+                                        <th>2</th>
+                                        <td>John</td>
+                                        <td>$25000</td>
+                                        <td>25/05/2018</td>
+                                        <td><span class="badge badge-success">Aproved</span></th>
+                                    </tr>
+
+
+                                    <tr>
+                                        <th>3</th>
+                                        <td>John</td>
+                                        <td>$25000</td>
+                                        <td>25/05/2018</td>
+                                        <td><span class="badge badge-success">Aproved</span></th>
+                                    </tr>
+
+
+                                    <tr>
+                                        <th>4</th>
+                                        <td>John</td>
+                                        <td>$25000</td>
+                                        <td>25/05/2018</td>
+                                        <td><span class="badge badge-success">Aproved</span></th>
+                                    </tr>
+
+                                    <tr>
+                                        <th>5</th>
+                                        <td>John</td>
+                                        <td>$25000</td>
+                                        <td>25/05/2018</td>
+                                        <td><span class="badge badge-warning">Pending</span></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <nav>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            <span>Previous</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item active">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            1
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            2
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            3
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a href="#" class="page-link py-2 px-3">
+                                            <span>Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- FIN BOOTSTRAP TABLES -->
+
+  
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/8ff4362b35.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
