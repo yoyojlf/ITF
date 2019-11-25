@@ -46,19 +46,19 @@
                         </div>
                         <ul class="navbar-nav flex-column py-3">
                             <li class="nav-item">
-                                <a href="{% static 'Ranking.html' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                <a href="{% url 'web_ranking' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
                                     <i class="fas fa-list-ol text-light fa-lg mr-3"> Ranking</i>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{% static 'Perfil.html' %}" class="nav-link text-white p-3 mb-2 current">
+                                <a href="{% url 'user_profile' %}" class="nav-link text-white p-3 mb-2 current">
                                     <i class="fas fa-user text-light fa-lg mr-3"> Perfil</i>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{% static 'Evaluaciones.html' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                <a href="{% url 'user_evaluacion' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
                                     <i class="fas fa-check text-light fa-lg mr-3"> Evaluaciones</i>
                                 </a>
                             </li>
@@ -106,7 +106,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
-                    <a class="btn btn-danger" href="{% static 'index.html' %}" role="button">Log Out</a>
+                    <a class="btn btn-danger" href="{% url 'web_index' %}" role="button">Log Out</a>
                 </div>
             </div>
         </div>
@@ -180,13 +180,13 @@
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label><strong>Username</strong></label>
-                                                            <h5>Felipe Henriquez</h5>
+                                                            <h5>{{user.username}}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label><strong>Email Address</strong></label>
-                                                            <h5>fe.henriquezl@alumnos.duoc.cl</h5>
+                                                            <h5>{{user.email}}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -194,13 +194,13 @@
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label><strong>First Name</strong></label>
-                                                            <h5>Felipe</h5>
+                                                            <h5>{{user.first_name}}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label><strong>Last Name</strong></label>
-                                                            <h5>Henriquez</h5>
+                                                            <h5>{{user.last_name}}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -217,7 +217,7 @@
                                             <form>
                                                 <div class="form-group">
                                                     <label><strong>Address</strong></label>
-                                                    <h5>Calle falsa #123</h5>
+                                                    <h5>{{user.address}}</h5>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
@@ -252,7 +252,7 @@
                                     <form>
                                         <div class="form-group"><label
                                                 for="signature"><strong>Biografia</strong><br></label><textarea
-                                                class="form-control" rows="4" name="signature"></textarea></div>
+                                                class="form-control" rows="4" name="signature">{{user.bio}}</textarea></div>
                                         <div class="form-group"><button class="btn btn-primary btn-sm"
                                                 type="submit">Guardar</button></div>
                                     </form>

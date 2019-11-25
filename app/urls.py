@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required #para decorar los resultados de las url
 from web.views import  IndexView, RankingView,LogView #LoginView, LogoutView,
-from usuario.views import CreateUserView, LoginView, LogoutView, LoginView2
+from usuario.views import CreateUserView, LoginView, LogoutView, LoginView2, ProfileView, EvaView
 
 
 urlpatterns = [
@@ -39,6 +39,8 @@ urlpatterns = [
     #Url para registrar usuario
     url(r'^user/signup$', CreateUserView.as_view(), name='user_create' ),
     path('login', LoginView2.as_view(), name='user_login'),
+    path('profile', ProfileView.as_view(), name='user_profile'),
+    path('evaluacion', EvaView.as_view(), name='user_evaluacion'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -46,19 +46,19 @@
                         </div>
                         <ul class="navbar-nav flex-column py-3">
                             <li class="nav-item">
-                                <a href="{% static 'Ranking.html' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                <a href="{% url 'web_ranking' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
                                     <i class="fas fa-list-ol text-light fa-lg mr-3"> Ranking</i>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{% static 'Perfil.html' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
+                                <a href="{% url 'user_profile' %}" class="nav-link text-white p-3 mb-2 sidebar-link">
                                     <i class="fas fa-user text-light fa-lg mr-3"> Perfil</i>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{% static 'Evaluaciones.html' %}" class="nav-link text-white p-3 mb-2 current">
+                                <a href="{% url 'user_evaluacion' %}" class="nav-link text-white p-3 mb-2 current">
                                     <i class="fas fa-check text-light fa-lg mr-3"> Evaluaciones</i>
                                 </a>
                             </li>
@@ -103,7 +103,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
-                    <a class="btn btn-danger" href="{% static 'index.html' %}" role="button">Log Out</a>
+                    <a class="btn btn-danger" href="{% url 'web_index' %}" role="button">Log Out</a>
                 </div>
             </div>
         </div>

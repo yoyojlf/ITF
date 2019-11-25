@@ -143,3 +143,15 @@ class CreateUserView(View):
             'success_message': success_message
         }
         return render(request, 'usuario/new_user.html', context)
+
+class ProfileView(View):
+    @method_decorator(login_required())
+    def get(self,request):
+
+        return render(request, 'Perfil.html')
+
+class EvaView(View):
+    @method_decorator(login_required())
+    def get(self,request):
+
+        return render(request, 'Evaluaciones.html')
