@@ -150,3 +150,12 @@ DEFAULT_OPCION = {
 }
 
 OPCION = getattr(settings, 'OPCION', DEFAULT_OPCION)
+
+"""EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'compuapes@gmail.com'
+EMAIL_HOST_PASSWORD = '#SazMn2H4'"""
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

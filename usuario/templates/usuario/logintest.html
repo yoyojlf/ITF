@@ -28,8 +28,11 @@
             <input name="pwd" type="password" required="">
             <label>Password</label>
         </div>
-      
-        <input type="submit" value="submit"> 
+        <div class="form-group">
+            <a href="{% url 'password_reset' %}">Olvidé mi contraseña</a>
+            <input type="submit" value="submit">
+        </div>
+
     </form>
 </div>
 

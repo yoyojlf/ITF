@@ -93,7 +93,7 @@ class LoginView2(View):
             'errors': error_messages,
             'login_form': form
         }
-        return render(request,'usuario/login.html', context)
+        return render(request,'usuario/logintest.html', context)
 
 class LogoutView(View):
     @method_decorator(login_required())

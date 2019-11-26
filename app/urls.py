@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required #para decorar los resultados de las url
 from web.views import  IndexView, RankingView,LogView #LoginView, LogoutView,
 from usuario.views import CreateUserView, LoginView, LogoutView, LoginView2, ProfileView, EvaView
+from django.contrib.auth.views import \
+    PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
 
 urlpatterns = [
@@ -41,6 +43,21 @@ urlpatterns = [
     path('login', LoginView2.as_view(), name='user_login'),
     path('profile', ProfileView.as_view(), name='user_profile'),
     path('evaluacion', EvaView.as_view(), name='user_evaluacion'),
+    #URL PARA EL RESET DEL PASSWPRD
+    url(r'^reset/password_reset$', PasswordResetView.as_view(template_name='usuario/registration/password_reset_form.html',
+                                                             email_template_name='usuario/registration/password_reset_email.html'),
+        #{'template_name': 'usuario/registration/password_reset_form.html',
+         #                                     'email_template_name': 'usuario/registration/password_reset_email.html'},
+        name='password_reset'),
+    url(r'^reset/password_reset_done$', PasswordResetDoneView.as_view(template_name='usuario/registration/password_reset_done.html'),
+        #{'template_name': 'usuario/registration/password_reset_done.html'},
+        name='password_reset_done'),
+    url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$',PasswordResetConfirmView.as_view(template_name='usuario/registration/password_reset_confirm.html'),
+        #{'template_name':'usuario/registration/password_reset_confirm.html'},
+        name='password_reset_confirm'),
+    url(r'^reset/done$', PasswordResetCompleteView.as_view(template_name='usuario/registration/password_reset_complete.html'),
+        #{'template_name': 'usuario/registration/password_reset_complete.html'},
+        name='password_reset_complete'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
