@@ -23,6 +23,7 @@ from web.views import  IndexView, RankingView,LogView #LoginView, LogoutView,
 from usuario.views import CreateUserView, LoginView, LogoutView, LoginView2, ProfileView, EvaView
 from django.contrib.auth.views import \
     PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+from usuario.api import UserListAPI, TipoUserListAPI
 
 
 urlpatterns = [
@@ -58,6 +59,11 @@ urlpatterns = [
     url(r'^reset/done$', PasswordResetCompleteView.as_view(template_name='usuario/registration/password_reset_complete.html'),
         #{'template_name': 'usuario/registration/password_reset_complete.html'},
         name='password_reset_complete'),
+
+    #### User API URLs
+    path('api/1.0/users/', UserListAPI.as_view(), name='user_list_api'),
+    #url api tipo usuarios list
+    path('api/1.0/tipoUsers/', TipoUserListAPI.as_view(), name='tipe_user_list_api'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
